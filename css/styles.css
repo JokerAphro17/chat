@@ -1,0 +1,580 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400, 600);
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+body {
+    background-color: #f8f8f8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    background-image: url("../images/pleaseChatbg.png");
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.form-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    padding: 40px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.form-box .button-box {
+    position: relative;
+    margin-top: 30px;
+}
+
+.form-box
+    .toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    border: 0;
+    font-size: 16px;
+    color: rgb(36, 35, 35);
+    outline: none;
+    position: relative;
+}
+
+.toggle-btn:hover {
+    background-color: #00b0ff;
+    color: #fff;
+    border: 1px solid #2c1010;
+    border-radius: 5px;
+
+}
+
+.active {
+    background-color: #00b0ff;
+    color: #fff;
+    border: 1px solid #2c1010;
+    border-radius: 5px;
+}
+
+
+
+.form-box .toggle-btn:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    background : transparent;
+    border: 1px solid #2c1010;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: all 0.4s ease-in-out;
+}
+
+.form-box .toggle-btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+}
+
+.form-box .toggle-btn:hover:after {
+    transform: scaleX(1);
+    color: #fff;
+
+}
+
+
+
+
+.form-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 7px;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.form-box button[type="submit"] {
+    max-width: 100px;
+    background: #00b0ff;
+    border: none;   
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.form-box form {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-box {
+    padding: 10px;
+    margin : 10px;
+    background-color: rgb(243, 54, 54)   ;
+    color: #fff;
+}
+
+.error {
+    color: red;
+}
+
+.wrapper {
+    position: relative;
+    left: 50%;
+    width: 1000px;
+    height: 800px;
+    transform: translate(-50%, 0);
+}
+.container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 75%;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+}
+.container .left {
+    float: left;
+    width: 37.6%;
+    height: 100%;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+}
+.container .left .top {
+    position: relative;
+    width: 100%;
+    height: 96px;
+    padding: 0 29px;
+}
+.container .left .top:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    width: 80%;
+    height: 1px;
+    content: "";
+    background-color: #e6e6e6;
+    transform: translate(-50%, 0);
+}
+.container .left .top input {
+    float: left;
+    width: 188px;
+    height: 42px;
+    padding: 0 15px 0 40px;
+    border: 1px solid #e6e6e6;
+    background-color: #eceff1;
+    border-radius: 21px;
+    outline: none;
+    transition: all 0.3s;
+    position: relative;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+}
+.container .left .top input:focus {
+    background-color: #fff;
+}
+.container .left .top .search-icon {
+    width: 20px;
+    position: absolute;
+    left: 42px;
+    top: 48px;
+}
+.container .left .top .compose {
+    cursor: pointer;
+    float: left;
+    width: 42px;
+    height: 42px;
+    margin-left: 10px;
+    border: 1px solid #e6e6e6;
+    background-color: #00b0ff;
+    background-image: url("../images/compose.png");
+    background-repeat: no-repeat;
+    background-position: top 12px left 14px;
+    border-radius: 50%;
+}
+.container .left .top .compose:hover {
+    opacity: 0.69;
+}
+.container .left .top .status {
+    height: 32px;
+    line-height: 32px;
+    margin-left: 13px;
+    margin-bottom: 5px;
+}
+.container .left .top .status .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: grey;
+    display: inline-block;
+    vertical-align: middle;
+    transition: all 0.5s;
+}
+.container .left .top .status .indicator.online {
+    background-color: #86bb71;
+}
+.container .left .top .status .indicator.offline {
+    background-color: #e38968;
+}
+.container .left .top .status .status-text {
+    font-size: 13px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 7px;
+    color: #92959e;
+    font-weight: 600;
+}
+.container .left .people {
+    border-right: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+    width: 100%;
+    list-style: none;
+    overflow: auto;
+    max-height: 460px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.container .left .people .person {
+    position: relative;
+    width: 100%;
+    padding: 15px 10%;
+    cursor: pointer;
+    background-color: #fff;
+}
+.container .left .people .person:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    width: 80%;
+    height: 1px;
+    content: "";
+    background-color: #e6e6e6;
+    transform: translate(-50%, 0);
+}
+.container .left .people .person img {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    border-radius: 50%;
+}
+.container .left .people .person .name {
+    font-size: 14px;
+    line-height: 22px;
+    color: #1a1a1a;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+}
+.container .left .people .person .time {
+    font-size: 14px;
+    position: absolute;
+    top: 16px;
+    right: 10%;
+    padding: 0 0 5px 5px;
+    color: #999;
+    background-color: #fff;
+}
+.container .left .people .person .preview {
+    font-size: 14px;
+    display: inline-block;
+    overflow: hidden !important;
+    width: 70%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #999;
+}
+.container .left .people .person.active,
+.container .left .people .person:hover {
+    background-color: #00b0ff;
+}
+.container .left .people .person.active span,
+.container .left .people .person:hover span {
+    color: #fff;
+    background: transparent;
+}
+.container .left .people .person.active:after,
+.container .left .people .person:hover:after {
+    display: none;
+}
+.container .left .bottom {
+    position: absolute;
+    bottom: 10px;
+    margin-left: 45px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.container .left .bottom .indicator-bottom {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    transition: all 0.5s;
+}
+.container .left .bottom .indicator-bottom.online {
+    background-color: #86bb71;
+}
+.container .left .bottom .indicator-bottom.offline {
+    background-color: #e38968;
+}
+.container .left .bottom .go-status {
+    font-size: 13px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 7px;
+    color: #92959e;
+    font-weight: 600;
+}
+.container .left .bottom:hover {
+    -webkit-transform: translate(5px, 0);
+    transform: translate(5px, 0);
+}
+.container .left .bottom:hover .go-status {
+    color: #1a1a1a;
+}
+.container .right {
+    position: relative;
+    float: left;
+    width: 62.4%;
+    height: 100%;
+}
+.container .right .top {
+    width: 100%;
+    height: 47px;
+    padding: 15px 29px;
+    background-color: #eceff1;
+}
+.container .right .top span {
+    font-size: 15px;
+    color: #999;
+}
+.container .right .top span .name {
+    color: #1a1a1a;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+}
+.container .right .chat {
+    position: relative;
+    display: none;
+    overflow-y: auto;
+    padding: 10px 35px;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: #e6e6e6;
+    height: 512px;
+}
+.container .right .chat.active-chat {
+    display: block;
+}
+
+
+.container .right .write {
+    position: absolute;
+    bottom: 0px;
+    height: 42px;
+    padding-left: 8px;
+    border: 1px solid #e6e6e6;
+    background-color: #eceff1;
+    width: 100%;
+    border-radius: 5px;
+}
+.container .right .write input {
+    font-size: 16px;
+    float: left;
+    width: 440px;
+    height: 40px;
+    padding: 0 25px;
+    color: #1a1a1a;
+    border: 0;
+    outline: none;
+    background-color: #eceff1;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+}
+.container .right .write .write-link.send {
+    cursor: pointer;
+}
+.container .right .write .write-link.send:before {
+    float: right;
+    width: 20px;
+    height: 42px;
+    margin-right: 25px;
+    content: "";
+    background-image: url("../images/send.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s;
+}
+.container .right .write .write-link.send:hover:before {
+    transform: rotate(313deg);
+}
+.container .right .bubble {
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    clear: both;
+    margin-bottom: 20px;
+    padding: 13px 14px;
+    vertical-align: top;
+    border-radius: 5px;
+    max-width: 310px;
+}
+.container .right .bubble:after {
+    position: absolute;
+    top: 15px;
+    display: block;
+    content: "";
+    border-width: 8px;
+    border-style: solid;
+    width: 0;
+    height: 0;
+}
+.container .right .bubble.you {
+    float: left;
+    color: #fff;
+    background-color: #00b0ff;
+    -webkit-animation-name: slideFromLeft;
+    animation-name: slideFromLeft;
+}
+.container .right .bubble.you:after {
+    left: -15px;
+    border-color: transparent #00b0ff transparent transparent;
+}
+.container .right .bubble.me {
+    float: right;
+    color: #1a1a1a;
+    background-color: #eceff1;
+    -webkit-animation-name: slideFromRight;
+    animation-name: slideFromRight;
+}
+.container .right .bubble.me:after {
+    right: -15px;
+    border-color: transparent transparent transparent #eceff1;
+}
+.container .right .bubble.error {
+    background-color: #fbfbfb !important;
+    text-decoration: line-through;
+    color: #cd3232;
+}
+.container .right .bubble.error:after {
+    border-color: transparent transparent transparent #fbfbfb;
+}
+.container .right .error-msg {
+    position: relative;
+    font-size: 12px;
+    clear: both;
+    float: right;
+    background-color: #fbfbfb;
+    margin-top: -2px;
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px dashed #cd3232;
+    -webkit-animation-name: slideFromRight;
+    animation-name: slideFromRight;
+    -webkit-transition-timing-function: cubic-bezier(0.4, -0.04, 1, 1);
+    transition-timing-function: cubic-bezier(0.4, -0.04, 1, 1);
+    -webkit-animation-duration: 0.69s;
+    animation-duration: 0.69s;
+}
+.container .right .conversation-start {
+    position: relative;
+    width: 100%;
+    margin-bottom: 27px;
+    text-align: center;
+}
+.container .right .conversation-start span {
+    font-size: 14px;
+    display: inline-block;
+    color: #999;
+}
+.container .right .conversation-start span:before,
+.container .right .conversation-start span:after {
+    position: absolute;
+    top: 10px;
+    display: inline-block;
+    width: 30%;
+    height: 1px;
+    content: "";
+    background-color: #e6e6e6;
+}
+.container .right .conversation-start span:before {
+    left: 0;
+}
+.container .right .conversation-start span:after {
+    right: 0;
+}
+@keyframes slideFromLeft {
+    0% {
+        margin-left: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+@-webkit-keyframes slideFromLeft {
+    0% {
+        margin-left: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+@keyframes slideFromRight {
+    0% {
+        margin-right: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-right: 0;
+        opacity: 1;
+    }
+}
+@-webkit-keyframes slideFromRight {
+    0% {
+        margin-right: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-right: 0;
+        opacity: 1;
+    }
+}
